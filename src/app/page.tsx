@@ -169,7 +169,7 @@ const ReviewSystem = () => {
           </Card>
 
           {/* Image Container with Zoom Effect */}
-          <div className="relative w-full lg:w-[800px] h-[400px] lg:h-[600px] overflow-hidden rounded-lg cursor-pointer lg:order-2">
+          <div className="relative w-full lg:w-[800px] h-[300px] xs:h-[400px] lg:h-[600px] overflow-hidden rounded-lg cursor-pointer lg:order-2">
             <div className="absolute inset-0 transition-transform duration-500 hover:scale-110">
               <Image
                 src='/package.png'
