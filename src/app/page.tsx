@@ -93,7 +93,7 @@ const ReviewSystem = () => {
   };
 
   return (
-    <div className='mx-auto px-4 py-14 space-y-8'>
+    <div className='mx-auto px-4 py-14 space-y-8 bg-[#fff]'>
       <div className="max-w-7xl mx-auto p-4 space-y-8">
         {/* Header Section */}
         <div className="text-center mb-8">
@@ -106,12 +106,12 @@ const ReviewSystem = () => {
           {/* Review Form */}
           <Card className="h-[600px] order-2 lg:order-1">
             <CardHeader>
-              <CardTitle><h1 className="text-2xl">Write a Review</h1></CardTitle>
+              <CardTitle><h1 className="text-xl md:text-2xl">Write a Review</h1></CardTitle>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium mb-1"><p className='text-[18px]'>Your Name</p></label>
+                  <label className="block text-sm font-medium mb-1"><p className='text-[16px] md:text-[18px]'>Your Name</p></label>
                   <input
                     type="text"
                     required
@@ -123,7 +123,7 @@ const ReviewSystem = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-1"><p className='text-[18px] pb-2'>Rating</p></label>
+                  <label className="block text-sm font-medium mb-1"><p className='text-[16px] md:text-[18px] pb-2'>Rating</p></label>
                   <div className="flex space-x-2">
                     {[1, 2, 3, 4, 5].map((star) => (
                       <button
@@ -143,7 +143,7 @@ const ReviewSystem = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-1"><p className='text-[18px] pt-2'>Your Review</p></label>
+                  <label className="block text-sm font-medium mb-1"><p className='text-[16px] md:text-[18px] pt-2'>Your Review</p></label>
                   <textarea
                     required
                     className="w-full p-2 border rounded-md h-24 field"
@@ -155,7 +155,7 @@ const ReviewSystem = () => {
 
                 <button
                   type="submit"
-                  className="bg-[#f74d25] text-white px-5 py-3 rounded-md hover:bg-[#ffe9d0] text-[18px] flex justify-center items-center"
+                  className="bg-[#f74d25] text-white px-5 py-3 rounded-md hover:bg-[#ffe9d0] text-[16px] md:text-[18px] flex justify-center items-center"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (
@@ -198,7 +198,7 @@ const ReviewSystem = () => {
           <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3'>
             {reviews.map((review) => (
               <div className='' key={review.id}>
-                <Card className="mb-4 flex h-36">
+                <Card className="mb-4 flex min-h-36">
                   <CardContent className="pt-4">
                     <div className="flex justify-between items-start mb-2">
                       <div>
@@ -235,7 +235,7 @@ const ReviewSystem = () => {
         {/* Coming Soon Section */}
         <Card className="bg-gray-50">
           <CardContent className="text-center py-8">
-            <h2 className="text-xl font-semibold mb-2">More Features Coming Soon!</h2>
+            <h2 className="text-lg md:text-xl font-semibold mb-2">More Features Coming Soon!</h2>
             <p className="text-gray-600">
               Our product catalog and online shopping features are currently under development.
               Check back soon for updates!
