@@ -42,7 +42,7 @@ const HeroSlider = () => {
           />
         ))}
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black opacity-70"></div>
+        <div className="absolute inset-0 bg-black opacity-55"></div>
       </div>
 
       {/* Content */}
