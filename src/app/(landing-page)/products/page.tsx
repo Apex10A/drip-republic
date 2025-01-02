@@ -495,9 +495,9 @@ const ProductPage = () => {
 
           <div className='flex w-full items-center'>
           <hr className='w-full bg-[#3F3F3F] '/>
-          {/* <div className='bg-[#EAEAEA] rounded-full px-3 py-3 ml-5'>
+          <div className='bg-[#EAEAEA] rounded-full px-3 py-3 ml-5'>
           <ShoppingCart className="w-5 h-5 text-[#A9A9A9]" />
-          </div> */}
+          </div>
           </div>
 
           <p className="font-bold">${product.price}</p>
