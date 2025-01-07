@@ -3,6 +3,7 @@ import { div } from 'framer-motion/client';
 import React, { useState } from 'react';
 import { ShoppingCart } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 
 const products = [
   // Shirts with scattered sizes
@@ -404,6 +405,7 @@ const products = [
 ];
 
 const ProductPage = () => {
+  const router = useRouter();
   const [activeFilter, setActiveFilter] = useState("All");
   const [activeSizeFilter, setActiveSizeFilter] = useState(null);
   
@@ -428,6 +430,9 @@ const ProductPage = () => {
     return product.category === "Shirts" && product.category === activeSizeFilter;
   });
 
+ const handleProductClick = (productId: number) => {
+      router.push(`/products/${productId}`);
+    };
   return (
     <div className="py-20 flex flex-col items-center justify-center text-center">
       <div>
@@ -479,6 +484,7 @@ const ProductPage = () => {
           >
             <div
             key={product.id}
+            onClick={() => handleProductClick(product.id)}
             className="group relative overflow-hidden transition-all duration-300 hover:scale-105 cursor-pointer"
           >
             <div className="aspect-[3/4] w-[320px] max-h-[300px] relative overflow-hidden">
