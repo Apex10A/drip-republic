@@ -13,7 +13,7 @@ const products = [
     {
       id: 1,
       name: "Classic White Shirt",
-      price: 29.99,
+      price: 5000,
       size: "M",
       image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632233/x5jds14prne6mdgibjx6.png",
       category: "Shirts"
@@ -21,7 +21,7 @@ const products = [
     {
       id: 2,
       name: "Slim Fit Navy Shirt",
-      price: 32.99,
+      price: 5000,
       size: "L",
       image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632231/bhcbfjrhjva6md2idftz.png",
       category: "Shirts"
@@ -29,7 +29,7 @@ const products = [
     {
       id: 3,
       name: "Oxford Blue Shirt",
-      price: 34.99,
+      price: 5000,
       size: "S",
       image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632230/hbvtd2r9otmwcqzwnkq9.png",
       category: "Shirts"
@@ -37,7 +37,7 @@ const products = [
     {
       id: 4,
       name: "Business White Shirt",
-      price: 36.99,
+      price: 5000,
       size: "XL",
       image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632231/casdwu3yisz9sxhwuxdf.png",
       category: "Shirts"
@@ -45,7 +45,7 @@ const products = [
     {
       id: 5,
       name: "Striped Business Shirt",
-      price: 39.99,
+      price: 5000,
       size: "M",
       image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632233/rohzaki7r40kvwfwvhow.png",
       category: "Shirts"
@@ -53,7 +53,7 @@ const products = [
     {
       id: 6,
       name: "Casual Blue Shirt",
-      price: 28.99,
+      price: 5000,
       size: "S",
       image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632229/uzjlfi61wgv5igm0xkrq.png",
       category: "Shirts"
@@ -61,7 +61,7 @@ const products = [
     {
       id: 7,
       name: "Formal White Shirt",
-      price: 42.99,
+      price: 5000,
       size: "L",
       image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632233/x5jds14prne6mdgibjx6.png",
       category: "Shirts"
@@ -69,7 +69,7 @@ const products = [
     {
       id: 8,
       name: "Pinstripe Shirt",
-      price: 45.99,
+      price: 5000,
       size: "M",
       image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632231/bhcbfjrhjva6md2idftz.png",
       category: "Shirts"
@@ -416,7 +416,7 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
   }
 
   return (
-    <div className="min-h-screen p-6">
+    <div className="min-h-screen p-6 md:max-w-[70%] mx-auto">
       <Button 
         variant="ghost" 
         className="mb-6"
@@ -426,7 +426,7 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
         Back to Products
       </Button>
 
-      <Card className="grid md:grid-cols-2 gap-6 p-6">
+      <Card className="grid md:grid-cols-2 gap-8 p-6">
         <div className="relative">
           <img 
             src={product.image} 
@@ -454,7 +454,7 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
             </div>
             <CardTitle className="text-2xl font-bold">{product.name}</CardTitle>
             <div className="text-3xl font-bold text-primary">
-              ${product.price.toFixed(2)}
+            ₦{product.price.toFixed(2)}
             </div>
           </CardHeader>
 

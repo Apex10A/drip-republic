@@ -10,7 +10,7 @@ const products = [
   {
     id: 1,
     name: "Classic White Shirt",
-    price: 29.99,
+    price: 5000,
     size: "M",
     image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632233/x5jds14prne6mdgibjx6.png",
     category: "Shirts"
@@ -18,7 +18,7 @@ const products = [
   {
     id: 2,
     name: "Slim Fit Navy Shirt",
-    price: 32.99,
+    price: 5000,
     size: "L",
     image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632231/bhcbfjrhjva6md2idftz.png",
     category: "Shirts"
@@ -26,7 +26,7 @@ const products = [
   {
     id: 3,
     name: "Oxford Blue Shirt",
-    price: 34.99,
+    price: 5000,
     size: "S",
     image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632230/hbvtd2r9otmwcqzwnkq9.png",
     category: "Shirts"
@@ -34,7 +34,7 @@ const products = [
   {
     id: 4,
     name: "Business White Shirt",
-    price: 36.99,
+    price: 5000,
     size: "XL",
     image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632231/casdwu3yisz9sxhwuxdf.png",
     category: "Shirts"
@@ -42,7 +42,7 @@ const products = [
   {
     id: 5,
     name: "Striped Business Shirt",
-    price: 39.99,
+    price: 5000,
     size: "M",
     image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632233/rohzaki7r40kvwfwvhow.png",
     category: "Shirts"
@@ -50,7 +50,7 @@ const products = [
   {
     id: 6,
     name: "Casual Blue Shirt",
-    price: 28.99,
+    price: 5000,
     size: "S",
     image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632229/uzjlfi61wgv5igm0xkrq.png",
     category: "Shirts"
@@ -58,7 +58,7 @@ const products = [
   {
     id: 7,
     name: "Formal White Shirt",
-    price: 42.99,
+    price: 5000,
     size: "L",
     image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632233/x5jds14prne6mdgibjx6.png",
     category: "Shirts"
@@ -66,7 +66,7 @@ const products = [
   {
     id: 8,
     name: "Pinstripe Shirt",
-    price: 45.99,
+    price: 5000,
     size: "M",
     image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632231/bhcbfjrhjva6md2idftz.png",
     category: "Shirts"
@@ -506,7 +506,7 @@ const ProductPage = () => {
           </div>
           </div>
 
-          <p className="font-bold">${product.price}</p>
+          <p className="font-bold">₦{product.price}</p>
         </div>
         </div>
         ))}
