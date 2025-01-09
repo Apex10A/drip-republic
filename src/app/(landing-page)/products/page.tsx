@@ -434,7 +434,7 @@ const ProductPage = () => {
       router.push(`/products/${productId}`);
     };
   return (
-    <div className="py-20 flex flex-col items-center justify-center text-center">
+    <div className="py-20 flex flex-col items-center justify-center bg-[#fff] text-center">
       <div>
         <p className="font-bold text-3xl text-[#3F3F3F]">Check out what's new</p>
         <p className="text-xl text-[#3F3F3F]">Latest of the trends we have to offer</p>
