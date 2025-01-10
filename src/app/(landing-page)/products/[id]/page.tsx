@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Heart, ShoppingCart, ArrowLeft } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import {useCart} from '@/app/context/cartcontext'
 
 const products = [
     // Shirts with scattered sizes
@@ -409,11 +410,15 @@ const products = [
 
 export default function ProductDetail({ params }: { params: { id: string } }) {
   const router = useRouter();
+  const { addToCart } = useCart();
   const product = products.find(p => p.id === parseInt(params.id));
 
   if (!product) {
     return <div>Product not found</div>;
   }
+  const handleAddToCart = () => {
+    addToCart(product);
+  };
 
   return (
     <div className="min-h-screen p-6 md:max-w-[70%] mx-auto">
@@ -487,17 +492,17 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
             </div>
           </CardContent>
 
-          <CardFooter className="p-0">
+      
             <div className="w-full space-y-3">
-              <Button className="w-full" size="lg">
-                <ShoppingCart className="mr-2 h-5 w-5" />
-                Add to Cart
-              </Button>
+            <Button className="w-full" size="lg" variant='outline' onClick={handleAddToCart}>
+          <ShoppingCart className="mr-2 h-5 w-5" />
+          Add to Cart
+        </Button>
               <Button variant="outline" className="w-full" size="lg">
                 Find in Store
               </Button>
             </div>
-          </CardFooter>
+
         </div>
       </Card>
     </div>

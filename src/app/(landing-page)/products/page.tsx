@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { ShoppingCart } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/navigation';
+import {useCart} from "@/app/context/cartcontext"
 
 const products = [
   // Shirts with scattered sizes
@@ -405,6 +406,14 @@ const products = [
 ];
 
 const ProductPage = () => {
+  const { addToCart } = useCart();
+  const [showAddAnimation, setShowAddAnimation] = useState<number | null>(null);
+  const handleAddToCart = (product: any, event: React.MouseEvent) => {
+    event.stopPropagation();
+    addToCart(product);
+    setShowAddAnimation(product.id);
+    setTimeout(() => setShowAddAnimation(null), 1000);
+  };
   const router = useRouter();
   const [activeFilter, setActiveFilter] = useState("All");
   const [activeSizeFilter, setActiveSizeFilter] = useState(null);
@@ -501,9 +510,26 @@ const ProductPage = () => {
 
           <div className='flex w-full items-center'>
           <hr className='w-full bg-[#3F3F3F] '/>
-          <div className='bg-[#EAEAEA] rounded-full px-3 py-3 ml-5'>
-          <ShoppingCart className="w-5 h-5 text-[#A9A9A9]" />
-          </div>
+          <div className='bg-[#EAEAEA] rounded-full px-3 py-3 ml-5 relative'>
+    <motion.div
+      whileTap={{ scale: 0.9 }}
+      onClick={(e) => handleAddToCart(product, e)}
+    >
+      <ShoppingCart className="w-5 h-5 text-[#A9A9A9] cursor-pointer" />
+    </motion.div>
+    <AnimatePresence>
+      {showAddAnimation === product.id && (
+        <motion.div
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          exit={{ scale: 0, opacity: 0 }}
+          className="absolute -top-2 -right-2 bg-green-500 text-white rounded-full p-1 text-xs"
+        >
+          ✓
+        </motion.div>
+      )}
+    </AnimatePresence>
+  </div>
           </div>
 
           <p className="font-bold">₦{product.price}</p>
