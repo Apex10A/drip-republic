@@ -4,9 +4,12 @@ import { ChevronRight, ShoppingCart, Star, Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link'; // Add this import
 import "@/app/index.css"
+import { useCart } from '@/app/context/cartcontext';
+import { Badge } from "@/components/ui/badge";
 
 const page = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { cartCount } = useCart();
   return (
     <div>
          <nav className="bg-white shadow-sm fixed w-full z-50">
@@ -24,9 +27,17 @@ const page = () => {
               <Link href="/shop" className="text-gray-900 hover:text-gray-600">Shop</Link>
               <Link href="/categories" className="text-gray-900 hover:text-gray-600">Categories</Link>
               <Link href="/about" className="text-gray-900 hover:text-gray-600">About us</Link>
-              <Link href="/cart">
-                <ShoppingCart className="h-6 w-6 text-gray-900 cursor-pointer" />
-              </Link>
+              <Link href="/cart" className="relative">
+          <ShoppingCart className="h-6 w-6 text-gray-900 cursor-pointer" />
+          {cartCount > 0 && (
+            <Badge 
+              variant="destructive" 
+              className="absolute -top-2 -right-2 h-5 w-5 flex items-center justify-center p-2 text-xs"
+            >
+              {cartCount}
+            </Badge>
+          )}
+        </Link>
             </div>
 
             <div>
