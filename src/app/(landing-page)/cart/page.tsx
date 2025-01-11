@@ -8,6 +8,7 @@ import { Trash2, Plus, Minus, ArrowLeft } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import Link from 'next/link';
 
 const CartPage = () => {
   const { cartItems, removeFromCart } = useCart();
@@ -115,9 +116,11 @@ const CartPage = () => {
                   <span className="font-bold text-lg">₦{totalAmount.toLocaleString()}</span>
                 </div>
               </div>
-              <Button className="w-full bg-[#F74D25] text-white hover:bg-[#e64421]">
-                Proceed to Checkout
-              </Button>
+              <Link href="/checkout" className="w-full">
+  <Button className="w-full bg-[#F74D25] text-white hover:bg-[#e64421]">
+    Proceed to Checkout
+  </Button>
+</Link>
             </Card>
           </div>
         </div>
