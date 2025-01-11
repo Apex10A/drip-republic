@@ -18,7 +18,7 @@ const Footer = () => {
               <a href="#" className="text-gray-800 hover:text-[#f74d25] transition-colors duration-300">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-800 hover:text-[#f74d25] transition-colors duration-300">
+              <a href="https://www.instagram.com/drip_republic_01?igsh=ZXRrYm0wa2l5N2pu" className="text-gray-800 hover:text-[#f74d25] transition-colors duration-300">
                 <Instagram className="h-5 w-5" />
               </a>
               <a href="#" className="text-gray-800 hover:text-[#f74d25] transition-colors duration-300">
@@ -35,7 +35,7 @@ const Footer = () => {
                 <li key={item}>
                   <a 
                     href="#" 
-                    className="text-gray-800 hover:text-white hover:translate-x-1 transition-all duration-300 block"
+                    className="text-gray-800 hover:text-gray-700 hover:translate-x-1 transition-all duration-300 block"
                   >
                     {item}
                   </a>
@@ -58,7 +58,7 @@ const Footer = () => {
                 <li key={item}>
                   <a 
                     href="#" 
-                    className="text-gray-800 hover:text-white hover:translate-x-1 transition-all duration-300 block"
+                    className="text-gray-800 hover:text-gray-700 hover:translate-x-1 transition-all duration-300 block"
                   >
                     {item}
                   </a>
