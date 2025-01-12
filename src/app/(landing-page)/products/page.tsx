@@ -505,8 +505,8 @@ const ProductPage = () => {
             </div>
           </div>
           <div className="flex flex-col items-start pt-5 w-full">
-          <h3 className="font-thin text-md">{product.name}</h3>
-          <p className="text-sm font-thin uppercase opacity-[0.8]">CLOTHING, {product.category}</p>
+          <h3 className="font-thin text-md text-gray-800">{product.name}</h3>
+          <p className="text-sm font-thin uppercase opacity-[0.8] text-gray-800">CLOTHING, {product.category}</p>
 
           <div className='flex w-full items-center'>
           <hr className='w-full bg-[#3F3F3F] '/>
@@ -532,7 +532,7 @@ const ProductPage = () => {
   </div>
           </div>
 
-          <p className="font-bold">₦{product.price}</p>
+          <p className="font-bold text-gray-800">₦{product.price}</p>
         </div>
         </div>
         ))}
