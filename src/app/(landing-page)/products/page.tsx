@@ -10,7 +10,7 @@ const products = [
   // Shirts with scattered sizes
   {
     id: 1,
-    name: "Classic White Shirt",
+    name: "Classic Ashes Shirt",
     price: 5000,
     size: "M",
     image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632233/x5jds14prne6mdgibjx6.png",
@@ -505,7 +505,7 @@ const ProductPage = () => {
             </div>
           </div>
           <div className="flex flex-col items-start pt-5 w-full">
-          <h3 className="font-thin text-md text-gray-800">{product.name}</h3>
+          {/* <h3 className="font-thin text-md text-gray-800">{product.name}</h3> */}
           <p className="text-sm font-thin uppercase opacity-[0.8] text-gray-800">CLOTHING, {product.category}</p>
 
           <div className='flex w-full items-center'>
