@@ -76,16 +76,16 @@ const Footer = () => {
                 <p className="text-sm text-gray-800">
                   123 Fashion Street
                   <br />
-                  Style District, ST 12345
+                  Apatapiti, FUTA Southgate, Akure
                 </p>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-[#f74d25]" />
-                <p className="text-sm text-gray-800">+1 (555) 123-4567</p>
+                <p className="text-sm text-gray-800">+234-813-933-2506</p>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-[#f74d25]" />
-                <p className="text-sm text-gray-800">info@driprepublic.com</p>
+                <p className="text-sm text-gray-800">afolabiblessing@gmail.com</p>
               </div>
             </div>
           </div>
