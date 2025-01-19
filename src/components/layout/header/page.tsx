@@ -40,13 +40,13 @@ const page = () => {
         </Link>
             </div>
 
-            <div>
+            {/* <div>
                 <Link href="/login">
                   <button className='bg-[#f74d25] text-white w-[140px] hidden  px-3 py-3 rounded-md hover:bg-[#ffe9d0] text-[16px] md:text-[18px] md:flex justify-center items-center'>
                     Login
                   </button>
                 </Link>
-            </div>
+            </div> */}
 
             {/* Mobile menu button */}
             <div className="md:hidden">
