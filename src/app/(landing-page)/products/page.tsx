@@ -10,7 +10,7 @@ const products = [
   // Shirts with scattered sizes
   {
     id: 1,
-    name: "Classic Ashes Shirt",
+    name: "Shirt ",
     price: 5000,
     size: "M",
     image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632233/x5jds14prne6mdgibjx6.png",
@@ -72,198 +72,198 @@ const products = [
     image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632231/bhcbfjrhjva6md2idftz.png",
     category: "Shirts"
   },
-  // {
-  //   id: 9,
-  //   name: "Classic White Shirt",
-  //   price: 29.99,
-  //   size: "M",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632233/x5jds14prne6mdgibjx6.png",
-  //   category: "Shirts"
-  // },
-  // {
-  //   id: 10,
-  //   name: "Slim Fit Navy Shirt",
-  //   price: 32.99,
-  //   size: "L",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632231/bhcbfjrhjva6md2idftz.png",
-  //   category: "Shirts"
-  // },
-  // {
-  //   id: 11,
-  //   name: "Oxford Blue Shirt",
-  //   price: 34.99,
-  //   size: "S",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632230/hbvtd2r9otmwcqzwnkq9.png",
-  //   category: "Shirts"
-  // },
-  // {
-  //   id: 12,
-  //   name: "Business White Shirt",
-  //   price: 36.99,
-  //   size: "XL",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632231/casdwu3yisz9sxhwuxdf.png",
-  //   category: "Shirts"
-  // },
-  // {
-  //   id: 13,
-  //   name: "Striped Business Shirt",
-  //   price: 39.99,
-  //   size: "M",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632233/rohzaki7r40kvwfwvhow.png",
-  //   category: "Shirts"
-  // },
-  // {
-  //   id: 14,
-  //   name: "Casual Blue Shirt",
-  //   price: 28.99,
-  //   size: "S",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632229/uzjlfi61wgv5igm0xkrq.png",
-  //   category: "Shirts"
-  // },
-  // {
-  //   id: 15,
-  //   name: "Formal White Shirt",
-  //   price: 42.99,
-  //   size: "L",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632233/x5jds14prne6mdgibjx6.png",
-  //   category: "Shirts"
-  // },
-  // {
-  //   id: 16,
-  //   name: "Pinstripe Shirt",
-  //   price: 45.99,
-  //   size: "M",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632231/bhcbfjrhjva6md2idftz.png",
-  //   category: "Shirts"
-  // },
-  // {
-  //   id: 17,
-  //   name: "Classic White Shirt",
-  //   price: 29.99,
-  //   size: "M",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632233/x5jds14prne6mdgibjx6.png",
-  //   category: "Shirts"
-  // },
-  // {
-  //   id: 18,
-  //   name: "Slim Fit Navy Shirt",
-  //   price: 32.99,
-  //   size: "L",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632231/bhcbfjrhjva6md2idftz.png",
-  //   category: "Shirts"
-  // },
-  // {
-  //   id: 19,
-  //   name: "Oxford Blue Shirt",
-  //   price: 34.99,
-  //   size: "S",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632230/hbvtd2r9otmwcqzwnkq9.png",
-  //   category: "Shirts"
-  // },
-  // {
-  //   id: 20,
-  //   name: "Business White Shirt",
-  //   price: 36.99,
-  //   size: "XL",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632231/casdwu3yisz9sxhwuxdf.png",
-  //   category: "Shirts"
-  // },
-  // {
-  //   id: 21,
-  //   name: "Striped Business Shirt",
-  //   price: 39.99,
-  //   size: "M",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632233/rohzaki7r40kvwfwvhow.png",
-  //   category: "Shirts"
-  // },
-  // {
-  //   id: 22,
-  //   name: "Casual Blue Shirt",
-  //   price: 28.99,
-  //   size: "S",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632229/uzjlfi61wgv5igm0xkrq.png",
-  //   category: "Shirts"
-  // },
-  // {
-  //   id: 23,
-  //   name: "Formal White Shirt",
-  //   price: 42.99,
-  //   size: "L",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632233/x5jds14prne6mdgibjx6.png",
-  //   category: "Shirts"
-  // },
-  // {
-  //   id: 24,
-  //   name: "Pinstripe Shirt",
-  //   price: 45.99,
-  //   size: "M",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632231/bhcbfjrhjva6md2idftz.png",
-  //   category: "Shirts"
-  // },
-  // {
-  //   id: 25,
-  //   name: "Classic White Shirt",
-  //   price: 29.99,
-  //   size: "M",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632233/x5jds14prne6mdgibjx6.png",
-  //   category: "Shirts"
-  // },
-  // {
-  //   id: 26,
-  //   name: "Slim Fit Navy Shirt",
-  //   price: 32.99,
-  //   size: "L",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632231/bhcbfjrhjva6md2idftz.png",
-  //   category: "Shirts"
-  // },
-  // {
-  //   id: 27,
-  //   name: "Oxford Blue Shirt",
-  //   price: 34.99,
-  //   size: "S",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632230/hbvtd2r9otmwcqzwnkq9.png",
-  //   category: "Shirts"
-  // },
-  // {
-  //   id: 28,
-  //   name: "Business White Shirt",
-  //   price: 36.99,
-  //   size: "XL",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632231/casdwu3yisz9sxhwuxdf.png",
-  //   category: "Shirts"
-  // },
-  // {
-  //   id: 29,
-  //   name: "Striped Business Shirt",
-  //   price: 39.99,
-  //   size: "M",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632233/rohzaki7r40kvwfwvhow.png",
-  //   category: "Shirts"
-  // },
-  // {
-  //   id: 30,
-  //   name: "Casual Blue Shirt",
-  //   price: 28.99,
-  //   size: "S",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632229/uzjlfi61wgv5igm0xkrq.png",
-  //   category: "Shirts"
-  // },
-  // {
-  //   id: 31,
-  //   name: "Formal White Shirt",
-  //   price: 42.99,
-  //   size: "L",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632233/x5jds14prne6mdgibjx6.png",
-  //   category: "Shirts"
-  // },
-  // {
-  //   id: 32,
-  //   name: "Pinstripe Shirt",
-  //   price: 45.99,
-  //   size: "M",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632231/bhcbfjrhjva6md2idftz.png",
-  //   category: "Shirts"
-  // },
+  {
+    id: 9,
+    name: "Classic White Shirt",
+    price: 29.99,
+    size: "M",
+    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632233/x5jds14prne6mdgibjx6.png",
+    category: "Shirts"
+  },
+  {
+    id: 10,
+    name: "Slim Fit Navy Shirt",
+    price: 32.99,
+    size: "L",
+    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632231/bhcbfjrhjva6md2idftz.png",
+    category: "Shirts"
+  },
+  {
+    id: 11,
+    name: "Oxford Blue Shirt",
+    price: 34.99,
+    size: "S",
+    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632230/hbvtd2r9otmwcqzwnkq9.png",
+    category: "Shirts"
+  },
+  {
+    id: 12,
+    name: "Business White Shirt",
+    price: 36.99,
+    size: "XL",
+    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632231/casdwu3yisz9sxhwuxdf.png",
+    category: "Shirts"
+  },
+  {
+    id: 13,
+    name: "Striped Business Shirt",
+    price: 39.99,
+    size: "M",
+    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632233/rohzaki7r40kvwfwvhow.png",
+    category: "Shirts"
+  },
+  {
+    id: 14,
+    name: "Casual Blue Shirt",
+    price: 28.99,
+    size: "S",
+    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632229/uzjlfi61wgv5igm0xkrq.png",
+    category: "Shirts"
+  },
+  {
+    id: 15,
+    name: "Formal White Shirt",
+    price: 42.99,
+    size: "L",
+    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632233/x5jds14prne6mdgibjx6.png",
+    category: "Shirts"
+  },
+  {
+    id: 16,
+    name: "Pinstripe Shirt",
+    price: 45.99,
+    size: "M",
+    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632231/bhcbfjrhjva6md2idftz.png",
+    category: "Shirts"
+  },
+  {
+    id: 17,
+    name: "Classic White Shirt",
+    price: 29.99,
+    size: "M",
+    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632233/x5jds14prne6mdgibjx6.png",
+    category: "Shirts"
+  },
+  {
+    id: 18,
+    name: "Slim Fit Navy Shirt",
+    price: 32.99,
+    size: "L",
+    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632231/bhcbfjrhjva6md2idftz.png",
+    category: "Shirts"
+  },
+  {
+    id: 19,
+    name: "Oxford Blue Shirt",
+    price: 34.99,
+    size: "S",
+    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632230/hbvtd2r9otmwcqzwnkq9.png",
+    category: "Shirts"
+  },
+  {
+    id: 20,
+    name: "Business White Shirt",
+    price: 36.99,
+    size: "XL",
+    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632231/casdwu3yisz9sxhwuxdf.png",
+    category: "Shirts"
+  },
+  {
+    id: 21,
+    name: "Striped Business Shirt",
+    price: 39.99,
+    size: "M",
+    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632233/rohzaki7r40kvwfwvhow.png",
+    category: "Shirts"
+  },
+  {
+    id: 22,
+    name: "Casual Blue Shirt",
+    price: 28.99,
+    size: "S",
+    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632229/uzjlfi61wgv5igm0xkrq.png",
+    category: "Shirts"
+  },
+  {
+    id: 23,
+    name: "Formal White Shirt",
+    price: 42.99,
+    size: "L",
+    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632233/x5jds14prne6mdgibjx6.png",
+    category: "Shirts"
+  },
+  {
+    id: 24,
+    name: "Pinstripe Shirt",
+    price: 45.99,
+    size: "M",
+    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632231/bhcbfjrhjva6md2idftz.png",
+    category: "Shirts"
+  },
+  {
+    id: 25,
+    name: "Classic White Shirt",
+    price: 29.99,
+    size: "M",
+    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632233/x5jds14prne6mdgibjx6.png",
+    category: "Shirts"
+  },
+  {
+    id: 26,
+    name: "Slim Fit Navy Shirt",
+    price: 32.99,
+    size: "L",
+    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632231/bhcbfjrhjva6md2idftz.png",
+    category: "Shirts"
+  },
+  {
+    id: 27,
+    name: "Oxford Blue Shirt",
+    price: 34.99,
+    size: "S",
+    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632230/hbvtd2r9otmwcqzwnkq9.png",
+    category: "Shirts"
+  },
+  {
+    id: 28,
+    name: "Business White Shirt",
+    price: 36.99,
+    size: "XL",
+    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632231/casdwu3yisz9sxhwuxdf.png",
+    category: "Shirts"
+  },
+  {
+    id: 29,
+    name: "Striped Business Shirt",
+    price: 39.99,
+    size: "M",
+    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632233/rohzaki7r40kvwfwvhow.png",
+    category: "Shirts"
+  },
+  {
+    id: 30,
+    name: "Casual Blue Shirt",
+    price: 28.99,
+    size: "S",
+    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632229/uzjlfi61wgv5igm0xkrq.png",
+    category: "Shirts"
+  },
+  {
+    id: 31,
+    name: "Formal White Shirt",
+    price: 42.99,
+    size: "L",
+    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632233/x5jds14prne6mdgibjx6.png",
+    category: "Shirts"
+  },
+  {
+    id: 32,
+    name: "Pinstripe Shirt",
+    price: 45.99,
+    size: "M",
+    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632231/bhcbfjrhjva6md2idftz.png",
+    category: "Shirts"
+  },
   // {
   //   id: 33,
   //   name: "Formal White Shirt",
