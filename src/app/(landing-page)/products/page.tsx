@@ -1,424 +1,24 @@
 "use client"
 import { div } from 'framer-motion/client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ShoppingCart } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useRouter } from 'next/navigation';
+import { useRouter, useParams } from 'next/navigation';
 import {useCart} from "@/app/context/cartcontext"
-
-const products = [
-  // Shirts with scattered sizes
-  {
-    id: 1,
-    name: "Shirt ",
-    price: 5000,
-    size: "M",
-    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632233/x5jds14prne6mdgibjx6.png",
-    category: "Shirts"
-  },
-  {
-    id: 2,
-    name: "Slim Fit Navy Shirt",
-    price: 5000,
-    size: "L",
-    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632231/bhcbfjrhjva6md2idftz.png",
-    category: "Shirts"
-  },
-  {
-    id: 3,
-    name: "Oxford Blue Shirt",
-    price: 5000,
-    size: "S",
-    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632230/hbvtd2r9otmwcqzwnkq9.png",
-    category: "Shirts"
-  },
-  {
-    id: 4,
-    name: "Business White Shirt",
-    price: 5000,
-    size: "XL",
-    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632231/casdwu3yisz9sxhwuxdf.png",
-    category: "Shirts"
-  },
-  {
-    id: 5,
-    name: "Striped Business Shirt",
-    price: 5000,
-    size: "M",
-    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632233/rohzaki7r40kvwfwvhow.png",
-    category: "Shirts"
-  },
-  {
-    id: 6,
-    name: "Casual Blue Shirt",
-    price: 5000,
-    size: "S",
-    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632229/uzjlfi61wgv5igm0xkrq.png",
-    category: "Shirts"
-  },
-  {
-    id: 7,
-    name: "Formal White Shirt",
-    price: 5000,
-    size: "L",
-    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632233/x5jds14prne6mdgibjx6.png",
-    category: "Shirts"
-  },
-  {
-    id: 8,
-    name: "Pinstripe Shirt",
-    price: 5000,
-    size: "M",
-    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632231/bhcbfjrhjva6md2idftz.png",
-    category: "Shirts"
-  },
-  {
-    id: 9,
-    name: "Classic White Shirt",
-    price: 29.99,
-    size: "M",
-    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632233/x5jds14prne6mdgibjx6.png",
-    category: "Shirts"
-  },
-  {
-    id: 10,
-    name: "Slim Fit Navy Shirt",
-    price: 32.99,
-    size: "L",
-    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632231/bhcbfjrhjva6md2idftz.png",
-    category: "Shirts"
-  },
-  {
-    id: 11,
-    name: "Oxford Blue Shirt",
-    price: 34.99,
-    size: "S",
-    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632230/hbvtd2r9otmwcqzwnkq9.png",
-    category: "Shirts"
-  },
-  {
-    id: 12,
-    name: "Business White Shirt",
-    price: 36.99,
-    size: "XL",
-    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632231/casdwu3yisz9sxhwuxdf.png",
-    category: "Shirts"
-  },
-  {
-    id: 13,
-    name: "Striped Business Shirt",
-    price: 39.99,
-    size: "M",
-    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632233/rohzaki7r40kvwfwvhow.png",
-    category: "Shirts"
-  },
-  {
-    id: 14,
-    name: "Casual Blue Shirt",
-    price: 28.99,
-    size: "S",
-    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632229/uzjlfi61wgv5igm0xkrq.png",
-    category: "Shirts"
-  },
-  {
-    id: 15,
-    name: "Formal White Shirt",
-    price: 42.99,
-    size: "L",
-    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632233/x5jds14prne6mdgibjx6.png",
-    category: "Shirts"
-  },
-  {
-    id: 16,
-    name: "Pinstripe Shirt",
-    price: 45.99,
-    size: "M",
-    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632231/bhcbfjrhjva6md2idftz.png",
-    category: "Shirts"
-  },
-  {
-    id: 17,
-    name: "Classic White Shirt",
-    price: 29.99,
-    size: "M",
-    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632233/x5jds14prne6mdgibjx6.png",
-    category: "Shirts"
-  },
-  {
-    id: 18,
-    name: "Slim Fit Navy Shirt",
-    price: 32.99,
-    size: "L",
-    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632231/bhcbfjrhjva6md2idftz.png",
-    category: "Shirts"
-  },
-  {
-    id: 19,
-    name: "Oxford Blue Shirt",
-    price: 34.99,
-    size: "S",
-    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632230/hbvtd2r9otmwcqzwnkq9.png",
-    category: "Shirts"
-  },
-  {
-    id: 20,
-    name: "Business White Shirt",
-    price: 36.99,
-    size: "XL",
-    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632231/casdwu3yisz9sxhwuxdf.png",
-    category: "Shirts"
-  },
-  {
-    id: 21,
-    name: "Striped Business Shirt",
-    price: 39.99,
-    size: "M",
-    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632233/rohzaki7r40kvwfwvhow.png",
-    category: "Shirts"
-  },
-  {
-    id: 22,
-    name: "Casual Blue Shirt",
-    price: 28.99,
-    size: "S",
-    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632229/uzjlfi61wgv5igm0xkrq.png",
-    category: "Shirts"
-  },
-  {
-    id: 23,
-    name: "Formal White Shirt",
-    price: 42.99,
-    size: "L",
-    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632233/x5jds14prne6mdgibjx6.png",
-    category: "Shirts"
-  },
-  {
-    id: 24,
-    name: "Pinstripe Shirt",
-    price: 45.99,
-    size: "M",
-    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632231/bhcbfjrhjva6md2idftz.png",
-    category: "Shirts"
-  },
-  {
-    id: 25,
-    name: "Classic White Shirt",
-    price: 29.99,
-    size: "M",
-    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632233/x5jds14prne6mdgibjx6.png",
-    category: "Shirts"
-  },
-  {
-    id: 26,
-    name: "Slim Fit Navy Shirt",
-    price: 32.99,
-    size: "L",
-    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632231/bhcbfjrhjva6md2idftz.png",
-    category: "Shirts"
-  },
-  {
-    id: 27,
-    name: "Oxford Blue Shirt",
-    price: 34.99,
-    size: "S",
-    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632230/hbvtd2r9otmwcqzwnkq9.png",
-    category: "Shirts"
-  },
-  {
-    id: 28,
-    name: "Business White Shirt",
-    price: 36.99,
-    size: "XL",
-    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632231/casdwu3yisz9sxhwuxdf.png",
-    category: "Shirts"
-  },
-  {
-    id: 29,
-    name: "Striped Business Shirt",
-    price: 39.99,
-    size: "M",
-    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632233/rohzaki7r40kvwfwvhow.png",
-    category: "Shirts"
-  },
-  {
-    id: 30,
-    name: "Casual Blue Shirt",
-    price: 28.99,
-    size: "S",
-    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632229/uzjlfi61wgv5igm0xkrq.png",
-    category: "Shirts"
-  },
-  {
-    id: 31,
-    name: "Formal White Shirt",
-    price: 42.99,
-    size: "L",
-    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632233/x5jds14prne6mdgibjx6.png",
-    category: "Shirts"
-  },
-  {
-    id: 32,
-    name: "Pinstripe Shirt",
-    price: 45.99,
-    size: "M",
-    image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632231/bhcbfjrhjva6md2idftz.png",
-    category: "Shirts"
-  },
-  // {
-  //   id: 33,
-  //   name: "Formal White Shirt",
-  //   price: 42.99,
-  //   size: "L",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632233/x5jds14prne6mdgibjx6.png",
-  //   category: "Shirts"
-  // },
-  // // Continue with remaining 26 shirts...
-  // {
-  //   id: 34,
-  //   name: "Modern Fit Shirt",
-  //   price: 38.99,
-  //   size: "S",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632229/uzjlfi61wgv5igm0xkrq.png",
-  //   category: "Shirts"
-  // },
-
-  // // Suit Pants
-  // {
-  //   id: 35,
-  //   name: "Classic Black Suit Pants",
-  //   price: 79.99,
-  //   size: "32x32",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734653925/g9xm4q3srlnzf1jb25zy.jpg",
-  //   category: "Suit Pants"
-  // },
-  // {
-  //   id: 36,
-  //   name: "Navy Slim Fit Suit Pants",
-  //   price: 84.99,
-  //   size: "30x32",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632229/m3kauk0zgpmvvydoomzn.png",
-  //   category: "Suit Pants"
-  // },
-  // {
-  //   id: 37,
-  //   name: "Classic Black Suit Pants",
-  //   price: 79.99,
-  //   size: "32x32",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734653925/g9xm4q3srlnzf1jb25zy.jpg",
-  //   category: "Suit Pants"
-  // },
-  // {
-  //   id: 38,
-  //   name: "Navy Slim Fit Suit Pants",
-  //   price: 84.99,
-  //   size: "30x32",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632229/m3kauk0zgpmvvydoomzn.png",
-  //   category: "Suit Pants"
-  // },
-  // {
-  //   id: 39,
-  //   name: "Classic Black Suit Pants",
-  //   price: 79.99,
-  //   size: "32x32",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734653925/g9xm4q3srlnzf1jb25zy.jpg",
-  //   category: "Suit Pants"
-  // },
-  // {
-  //   id: 40,
-  //   name: "Navy Slim Fit Suit Pants",
-  //   price: 84.99,
-  //   size: "30x32",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632229/m3kauk0zgpmvvydoomzn.png",
-  //   category: "Suit Pants"
-  // },
-  // {
-  //   id: 41,
-  //   name: "Classic Black Suit Pants",
-  //   price: 79.99,
-  //   size: "32x32",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734653925/g9xm4q3srlnzf1jb25zy.jpg",
-  //   category: "Suit Pants"
-  // },
-  // {
-  //   id: 42,
-  //   name: "Navy Slim Fit Suit Pants",
-  //   price: 84.99,
-  //   size: "30x32",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632229/m3kauk0zgpmvvydoomzn.png",
-  //   category: "Suit Pants"
-  // },
-  // {
-  //   id: 43,
-  //   name: "Classic Black Suit Pants",
-  //   price: 79.99,
-  //   size: "32x32",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734653925/g9xm4q3srlnzf1jb25zy.jpg",
-  //   category: "Suit Pants"
-  // },
-  // {
-  //   id: 44,
-  //   name: "Navy Slim Fit Suit Pants",
-  //   price: 84.99,
-  //   size: "30x32",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632229/m3kauk0zgpmvvydoomzn.png",
-  //   category: "Suit Pants"
-  // },
-  // {
-  //   id: 45,
-  //   name: "Classic Black Suit Pants",
-  //   price: 79.99,
-  //   size: "32x32",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734653925/g9xm4q3srlnzf1jb25zy.jpg",
-  //   category: "Suit Pants"
-  // },
-  // {
-  //   id: 46,
-  //   name: "Navy Slim Fit Suit Pants",
-  //   price: 84.99,
-  //   size: "30x32",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632229/m3kauk0zgpmvvydoomzn.png",
-  //   category: "Suit Pants"
-  // },
-  // {
-  //   id: 47,
-  //   name: "Classic Black Suit Pants",
-  //   price: 79.99,
-  //   size: "32x32",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734653925/g9xm4q3srlnzf1jb25zy.jpg",
-  //   category: "Suit Pants"
-  // },
-  // {
-  //   id: 48,
-  //   name: "Navy Slim Fit Suit Pants",
-  //   price: 84.99,
-  //   size: "30x32",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632229/m3kauk0zgpmvvydoomzn.png",
-  //   category: "Suit Pants"
-  // },
-  // {
-  //   id: 49,
-  //   name: "Charcoal Grey Suit Pants",
-  //   price: 89.99,
-  //   size: "34x34",
-  //   image: "https://res.cloudinary.com/dsymioclv/image/upload/v1734632229/m3kauk0zgpmvvydoomzn.png",
-  //   category: "Suit Pants"
-  // }
-];
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "@/app/firebase"; // adjust path if needed
 
 const ProductPage = () => {
   const { addToCart } = useCart();
   const [showAddAnimation, setShowAddAnimation] = useState<number | null>(null);
-  const handleAddToCart = (product: any, event: React.MouseEvent) => {
-    event.stopPropagation();
-    addToCart(product);
-    setShowAddAnimation(product.id);
-    setTimeout(() => setShowAddAnimation(null), 1000);
-  };
+  const [products, setProducts] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
   const router = useRouter();
+  const params = useParams();
   const [activeFilter, setActiveFilter] = useState("All");
   const [activeSizeFilter, setActiveSizeFilter] = useState(null);
   
-  const mainCategories = ["All", "Shirts", "SweatShirts", "Wristwatch", "Sneakers", "Suit Pants"];
+  const mainCategories = ["All", "Shirts", "Suit Pants"];
   const shirtSizes = ["All Sizes", "Small", "Medium", "Large", "X-Large"];
   
   const handleMainFilter = (filter: React.SetStateAction<string>) => {
@@ -430,6 +30,26 @@ const ProductPage = () => {
   //   setActiveSizeFilter(size === "All Sizes" ? null : size);
   // };
 
+  const handleAddToCart = (product: any, event: React.MouseEvent) => {
+    event.stopPropagation();
+    addToCart(product);
+    setShowAddAnimation(product.id);
+    setTimeout(() => setShowAddAnimation(null), 1000);
+  };
+
+  useEffect(() => {
+    async function fetchProducts() {
+      const querySnapshot = await getDocs(collection(db, "products"));
+      const productsArr = querySnapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setProducts(productsArr);
+      setLoading(false);
+    }
+    fetchProducts();
+  }, []);
+
   const filteredProducts = products.filter(product => {
     if (activeFilter === "All") return true;
     if (activeFilter !== "Shirts") return product.category === activeFilter;
@@ -439,9 +59,12 @@ const ProductPage = () => {
     return product.category === "Shirts" && product.category === activeSizeFilter;
   });
 
- const handleProductClick = (productId: number) => {
+ const handleProductClick = (productId: string) => {
       router.push(`/products/${productId}`);
     };
+
+  if (loading) return <div>Loading...</div>;
+
   return (
     <div className="py-20 flex flex-col items-center justify-center bg-[#fff] text-center">
       <div>
