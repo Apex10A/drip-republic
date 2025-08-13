@@ -5,9 +5,25 @@ import { Star, Inbox } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/app/components/ui/card';
 import { Alert, AlertDescription } from '@/app/components/ui/alert';
 import Image from 'next/image';
-import { getFirestore } from "firebase/firestore";
-import { Loader } from 'lucide-react';
+import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, onValue, push, set } from "firebase/database";
+import { getFirestore, collection, getDocs, addDoc, Timestamp } from "firebase/firestore";
+import { Loader } from 'lucide-react';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCDx6Jml-reSh27v1jhD_BNSrUpsxR9Uqs",
+  authDomain: "drip-republic.firebaseapp.com",
+  projectId: "drip-republic",
+  storageBucket: "drip-republic.firebasestorage.app",
+  messagingSenderId: "207023456754",
+  databaseURL: "https://drip-republic-default-rtdb.firebaseio.com/",
+  appId: "1:207023456754:web:85ab230eccf2b8dd3c2b6b",
+  measurementId: "G-G9DG6HEN1C"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
 interface Review {
   id: string;
@@ -22,7 +38,7 @@ const ReviewSystem = () => {
   const [newReview, setNewReview] = useState<Review>({
     id: '',
     name: '',
-    rating: 1,
+    rating: 3,
     comment: '',
     date: ''
   });
@@ -99,7 +115,7 @@ const ReviewSystem = () => {
                     type="text"
                     required
                     className="w-full px-3 py-2 border rounded-md field"
-                    value={newReview.name}
+                    value={newReview?.name}
                     onChange={(e) => setNewReview({ ...newReview, name: e.target.value })}
                     placeholder="Enter your name"
                   />
@@ -117,7 +133,7 @@ const ReviewSystem = () => {
                       >
                         <Star
                           className={`w-6 h-6 ${
-                            star <= newReview.rating ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'
+                            star <= newReview?.rating ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'
                           }`}
                         />
                       </button>
@@ -151,7 +167,6 @@ const ReviewSystem = () => {
             </CardContent>
           </Card>
 
-          {/* Image Container with Zoom Effect */}
           <div className="relative w-full lg:w-[800px] h-[300px] xs:h-[400px] lg:h-[600px] overflow-hidden rounded-lg cursor-pointer lg:order-2">
             <div className="absolute inset-0 transition-transform duration-500 hover:scale-110">
               <Image
@@ -165,7 +180,6 @@ const ReviewSystem = () => {
           </div>
         </div>
 
-        {/* Thank You Alert */}
         {showThankYou && (
           <Alert className="bg-green-50 border-green-200">
             <AlertDescription>
@@ -174,7 +188,6 @@ const ReviewSystem = () => {
           </Alert>
         )}
 
-        {/* Display Reviews */}
         <div className="space-y-4">
           <h1 className="text-xl font-semibold mb-4 text-[#231f20]">Recent Reviews</h1>
           {reviews.length > 0 ? (
