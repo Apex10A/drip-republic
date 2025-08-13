@@ -11,17 +11,16 @@ import { getFirestore, collection, getDocs, addDoc, Timestamp } from "firebase/f
 import { Loader } from 'lucide-react';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCDx6Jml-reSh27v1jhD_BNSrUpsxR9Uqs",
-  authDomain: "drip-republic.firebaseapp.com",
-  projectId: "drip-republic",
-  storageBucket: "drip-republic.firebasestorage.app",
-  messagingSenderId: "207023456754",
-  databaseURL: "https://drip-republic-default-rtdb.firebaseio.com/",
-  appId: "1:207023456754:web:85ab230eccf2b8dd3c2b6b",
-  measurementId: "G-G9DG6HEN1C"
+  apiKey: process.env.NEXT_PUBLIC_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_MESSAGING_SENDER_ID,
+  databaseURL: process.env.NEXT_PUBLIC_DATABASE_URL,
+  appId: process.env.NEXT_PUBLIC_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_MEASUREMENT_ID
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
