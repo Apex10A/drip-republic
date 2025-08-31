@@ -6,3 +6,11 @@
 /* p, .Card, button, .field, h3, h2, a, li{
     font-family: "Bricolage Grotesque", sans-serif;
 } */
+
+/* Clamp long text to 3 lines */
+.clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* number of lines to show */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
